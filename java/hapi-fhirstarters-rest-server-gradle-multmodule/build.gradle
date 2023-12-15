@@ -1,22 +1,22 @@
 buildscript {
 
    ext {
-      spring_plugin_version = '2.7.18'
+      spring_plugin_version = '3.2.0'
       sonarqube_plugin_version = '3.0'
       jacoco_tool_version = '0.8.6'
 
-      springBootVersion = '2.7.18'
-      // Note, there is a relationship between the spring-boot-version and the hapi-fhir-version as seen here (under 'Compile Dependencies'): https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-server/6.2.5
-      hapiFhirVersion = '6.1.3'
+      springBootVersion = '3.2.0'
+      // Note, there is a relationship between the spring-boot-version and the hapi-fhir-version as seen here (under 'Compile Dependencies'): https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-server/6.1.1
+      hapiFhirVersion = '6.11.7-SNAPSHOT'
 
-      slf4jSimpleVersion = '1.7.36'
-      slf4jVersion = "1.7.36"
+      slf4jSimpleVersion = '2.0.9'
+      slf4jVersion = "2.0.9"
       javaxInjectVersion = "1"
 
       junitVersion = "4.13.2"
       mockitoVersion = "4.8.0"
 
-      commonsLangVersion = '3.12.0'
+      commonsLangVersion = '3.14.0'
 
       versionBuildHolderVariable = '1.0-SNAPSHOT'
 
@@ -75,6 +75,22 @@ subprojects {
    repositories {
 
       // ORDER MATTERS HERE.  See : https://stackoverflow.com/questions/50726435/difference-among-mavencentral-jcenter-and-mavenlocal/50726436#50726436
+
+      /* below is a TEMPORARY maven-source for Hapi Fhir SNAPSHOTS
+* as seen here https://hapifhir.io/hapi-fhir/docs/getting_started/downloading_and_importing.html#using-snapshot-builds
+* once a "jakarta" friendly hapi fhir RELEASE version is available, the below temp maven-source should be removed
+* also see : https://groups.google.com/g/hapi-fhir/c/U6dXYsC7LCg/m/Ssxk6Fs3AgAJ
+*
+* SNAPSHOT version values can be seen here:
+* https://oss.sonatype.org/#nexus-search;gav~ca.uhn.hapi.fhir~hapi-fhir-server~~~~kw,versionexpand
+*
+*
+* */
+      maven {
+         url "https://oss.sonatype.org/content/repositories/snapshots"
+      }
+
+
 
       //  As a general advice, you should avoid adding mavenLocal() as a repository.
       //  https://docs.gradle.org/current/userguide/declaring_repositories.html#sec:case-for-maven-local
