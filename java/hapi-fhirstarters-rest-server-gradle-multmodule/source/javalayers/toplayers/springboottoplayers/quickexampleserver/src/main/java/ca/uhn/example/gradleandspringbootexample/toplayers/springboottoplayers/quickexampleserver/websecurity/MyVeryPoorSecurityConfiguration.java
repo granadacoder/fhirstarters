@@ -20,7 +20,7 @@ public class MyVeryPoorSecurityConfiguration {
 
       http
          .authorizeHttpRequests(authorize -> authorize
-            //.requestMatchers("/**", "/**/**").permitAll()
+            .requestMatchers("/**", "/**/**").permitAll()
             .anyRequest().permitAll()
          );
 

@@ -13,6 +13,7 @@ dependencies {
 
    implementation project(':source:javalayers:resourceproviderlayer')
    implementation project(':source:javalayers:businesslogiclayer')
+   implementation project(':source:javalayers:hapifhirmimics')
 
    /* spring boot dependencies */
    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
@@ -25,9 +26,15 @@ dependencies {
    implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-structures-r4', version: hapiFhirVersion
    implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-server', version: hapiFhirVersion
    /* below items allow hapi-fhir-server to be configured by application.yml entries */
-   implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-spring-boot-autoconfigure', version: hapiFhirVersion
-   implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-jaxrsserver-base', version: hapiFhirVersion
+//   implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-spring-boot-autoconfigure', version: hapiFhirVersion
+//   implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-jaxrsserver-base', version: hapiFhirVersion
+//
+//   /* ca.uhn.fhir.jpa.subscription.channel.config.SubscriptionChannelConfig */
+//   implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-jpaserver-base', version: hapiFhirVersion
+//   implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-jpa', version: hapiFhirVersion
 
+   /* H2 JPA */
+   implementation group: 'com.h2database', name: 'h2', version: h2databaseVersion
 
    implementation group: 'org.apache.commons', name: 'commons-lang3', version: commonsLangVersion
 

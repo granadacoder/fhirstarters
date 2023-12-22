@@ -9,6 +9,9 @@ buildscript {
       // Note, there is a relationship between the spring-boot-version and the hapi-fhir-version as seen here (under 'Compile Dependencies'): https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-server/6.1.1
       hapiFhirVersion = '6.11.7-SNAPSHOT'
 
+      jakartaServletApiVersion = '6.0.0'
+
+
       slf4jSimpleVersion = '2.0.9'
       slf4jVersion = "2.0.9"
       javaxInjectVersion = "1"
@@ -17,6 +20,8 @@ buildscript {
       mockitoVersion = "4.8.0"
 
       commonsLangVersion = '3.14.0'
+
+      h2databaseVersion = '2.2.220'
 
       versionBuildHolderVariable = '1.0-SNAPSHOT'
 
