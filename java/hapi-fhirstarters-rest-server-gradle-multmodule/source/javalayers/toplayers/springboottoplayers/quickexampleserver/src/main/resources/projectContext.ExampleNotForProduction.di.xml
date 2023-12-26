@@ -20,9 +20,9 @@
       <!--        </bean>-->
 
 
-      <bean id="zzzFhirContextBean"
-            class="ca.uhn.fhir.context.FhirContext" factory-method="forR4">
-      </bean>
+<!--      <bean id="zzzFhirContextBean"-->
+<!--            class="ca.uhn.fhir.context.FhirContext" factory-method="forR4">-->
+<!--      </bean>-->
 
 
 

@@ -38,3 +38,9 @@ logging:
                core:
                   JdbcTemplate: INFO
                   StatementCreatorUtils: INFO
+            core:
+               io:
+                  support: DEBUG
+            context:
+                  annotation: DEBUG
+
