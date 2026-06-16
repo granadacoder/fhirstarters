@@ -19,7 +19,7 @@ buildscript {
       junitVersion = "6.1.0"
       mockitoVersion = "4.8.0"
 
-      commonsLangVersion = '3.14.0'
+      commonsLangVersion = '3.20.0'
 
       h2databaseVersion = '2.2.220'
 
