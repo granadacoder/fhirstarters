@@ -6,7 +6,7 @@ dependencies {
 
    implementation group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion
 
-    implementation group: 'javax.inject', name: 'javax.inject', version: javaxInjectVersion
+    implementation group: 'jakarta.inject', name: 'jakarta.inject-api', version: jakartaInjectVersion
 
     implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-base', version: hapiFhirVersion
     implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-structures-r4', version: hapiFhirVersion

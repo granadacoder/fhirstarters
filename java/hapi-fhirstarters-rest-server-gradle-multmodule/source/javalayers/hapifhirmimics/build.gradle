@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-   implementation group: 'javax.inject', name: 'javax.inject', version: javaxInjectVersion
+   implementation group: 'jakarta.inject', name: 'jakarta.inject-api', version: jakartaInjectVersion
 // https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api
    compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: jakartaServletApiVersion
 

@@ -14,7 +14,7 @@ buildscript {
 
       slf4jSimpleVersion = '2.0.17'
       slf4jVersion = "2.0.17"
-      javaxInjectVersion = "1"
+      jakartaInjectVersion = "2.0.1"
 
       junitVersion = "6.1.0"
       mockitoVersion = "4.8.0"
