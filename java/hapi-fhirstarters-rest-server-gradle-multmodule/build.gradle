@@ -16,7 +16,7 @@ buildscript {
       slf4jVersion = "2.0.17"
       jakartaInjectVersion = "2.0.1"
 
-      junitVersion = "6.1.0"
+      junitJupiterVersion = "6.1.0"
       mockitoVersion = "4.8.0"
 
       commonsLangVersion = '3.20.0'
@@ -176,7 +176,7 @@ allprojects {
 
    plugins.withType(JavaPlugin) {
       dependencies {
-         testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: junitVersion
+         testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: junitJupiterVersion
          testImplementation group: 'org.mockito', name: 'mockito-core', version: mockitoVersion
       }
    }
