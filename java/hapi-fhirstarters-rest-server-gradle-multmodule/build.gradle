@@ -2,7 +2,7 @@ buildscript {
 
    ext {
       spring_plugin_version = '4.0.7'
-      sonarqube_plugin_version = '3.0'
+      sonarqube_plugin_version = '7.3.1.8318'
       jacoco_tool_version = '0.8.6'
 
       springBootVersion = '4.0.7'
