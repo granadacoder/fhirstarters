@@ -6,7 +6,7 @@ buildscript {
       jacoco_tool_version = '0.8.6'
 
       springBootVersion = '4.0.7'
-      // Note, there is a relationship between the spring-boot-version and the hapi-fhir-version as seen here (under 'Compile Dependencies'): https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-server/6.1.1
+      // Note, there is a relationship between the spring-boot-version and the hapi-fhir-version as seen here (under 'Compile Dependencies'): https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-server/8.8.1
       hapiFhirVersion = '8.8.1'
 
       jakartaServletApiVersion = '6.0.0'
