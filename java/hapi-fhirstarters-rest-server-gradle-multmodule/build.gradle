@@ -1,19 +1,23 @@
 buildscript {
 
    ext {
-      spring_plugin_version = '3.2.0'
-      sonarqube_plugin_version = '3.0'
+      spring_plugin_version = '3.5.16'
+      sonarqube_plugin_version = '7.3.1.8318'
       jacoco_tool_version = '0.8.6'
 
-      springBootVersion = '3.2.0'
+      springBootVersion = '3.5.16'
       // Note, there is a relationship between the spring-boot-version and the hapi-fhir-version as seen here (under 'Compile Dependencies'): https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-server/6.1.1
-      hapiFhirVersion = '6.11.7-SNAPSHOT'
+      hapiFhirVersion = '8.8.1'
+
+      //below for granadacoder JT3 testing or any local SNAPSHOT testing
+      //hapiFhirVersion = '8.33.44-SNAPSHOT'
+
 
       jakartaServletApiVersion = '6.0.0'
 
 
-      slf4jSimpleVersion = '2.0.9'
-      slf4jVersion = "2.0.9"
+      slf4jSimpleVersion = '2.0.17'
+      slf4jVersion = "2.0.17"
       javaxInjectVersion = "1"
 
       junitVersion = "4.13.2"
@@ -103,6 +107,13 @@ subprojects {
       //  However, it may be necessary when testing here with changes to a shared component library that have only
       //  been published locally (vi "gradle publishToMavenLocal".
       //
+
+
+      //below for granadacoder JT3 testing or any local SNAPSHOT testing
+      //mavenLocal()
+
+
+
       mavenCentral()
 
    }
@@ -117,9 +128,9 @@ subprojects {
 
       group = "build"
       reports {
-         xml.enabled true
-         csv.enabled false
-         html.enabled false
+         xml.required = true
+         csv.required = false
+         html.required = false
       }
 
       afterEvaluate {
