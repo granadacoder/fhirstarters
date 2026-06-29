@@ -1,0 +1,24 @@
+plugins {
+   id 'java'
+}
+
+dependencies {
+   implementation group: 'javax.inject', name: 'javax.inject', version: javaxInjectVersion
+// https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api
+   compileOnly group: 'jakarta.servlet', name: 'jakarta.servlet-api', version: jakartaServletApiVersion
+
+
+   implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: springBootVersion
+
+
+   implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-base', version: hapiFhirVersion
+   implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-structures-r4', version: hapiFhirVersion
+   implementation group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-server', version: hapiFhirVersion
+   /* below items allow hapi-fhir-server to be configured by application.yml entries */
+   implementation(group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-spring-boot-autoconfigure', version: hapiFhirVersion) {
+
+      /*This keeps the needed HAPI autoconfigure classes for compile-time, while preventing it from pulling Spring Boot 3.5.x and related transitive jars that were overriding your intended 3.2.0 stack and causing NoClassDefFoundError: org/apache/hc/client5/http/ssl/TlsSocketStrategy. */
+      transitive = false
+   }
+
+}

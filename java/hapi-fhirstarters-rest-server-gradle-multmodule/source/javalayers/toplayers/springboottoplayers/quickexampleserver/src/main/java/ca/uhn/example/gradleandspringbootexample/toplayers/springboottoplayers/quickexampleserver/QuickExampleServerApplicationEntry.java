@@ -21,7 +21,10 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"ca.uhn.fhir.context",
+   "my.hapifhirmimics",
+   "ca.uhn.example.gradleandspringbootexample.toplayers.springboottoplayers.quickexampleserver.compositionroot",
+   "ca.uhn.example.gradleandspringbootexample.toplayers.springboottoplayers.quickexampleserver.websecurity"})
 //@ServletComponentScan
 @Configuration
 @ImportResource({"classpath*:applicationContext.xml"})
@@ -50,18 +53,18 @@ public class QuickExampleServerApplicationEntry { //extends SpringBootServletIni
          if (logger.isDebugEnabled()) {
             Resource[] items = getXMLResources();
             for (Resource item : items) {
-               logger.debug(LOG_MSG_XML_RESOURCE_FILENAME, item.getFilename());
+               logger.info(LOG_MSG_XML_RESOURCE_FILENAME, item.getFilename());
             }
 
             List<File> list = getFiles(System.getProperty("java.class.path"));
             for (File file : list) {
-               logger.debug(LOG_MSG_JAVA_CLASS_PATH_FILE_PATH, file.getPath());
+               logger.info(LOG_MSG_JAVA_CLASS_PATH_FILE_PATH, file.getPath());
             }
 
             String[] beanNames = applicationContext.getBeanDefinitionNames();
             Arrays.sort(beanNames);
             for (String beanName : beanNames) {
-               logger.debug(LOG_MSG_GET_BEAN_DEFINITION_NAME, beanName);
+               logger.info(LOG_MSG_GET_BEAN_DEFINITION_NAME, beanName);
             }
          }
 

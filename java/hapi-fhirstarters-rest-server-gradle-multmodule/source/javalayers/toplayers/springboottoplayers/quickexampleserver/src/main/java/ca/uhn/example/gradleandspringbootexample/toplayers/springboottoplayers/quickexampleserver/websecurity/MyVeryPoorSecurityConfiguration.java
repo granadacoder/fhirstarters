@@ -3,7 +3,6 @@ package ca.uhn.example.gradleandspringbootexample.toplayers.springboottoplayers.
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -15,13 +14,18 @@ public class MyVeryPoorSecurityConfiguration {
 
       /* The below is HORRIBLE "security" and is NOT production level correct */
 
-      http.csrf().disable(); /* had to add this "Cross Site Request Forgery" disable for DELETE operations */
-      http.authorizeRequests().anyRequest().permitAll();
+      /* had to add this "Cross Site Request Forgery" disable for DELETE operations */
+      http
+         .csrf(csrf -> csrf.disable());
+
+      http
+         .authorizeHttpRequests(authorize -> authorize
+            .requestMatchers("/**", "/**/**").permitAll()
+            .anyRequest().permitAll()
+         );
+
       return http.build();
+
    }
 
-   @Bean
-   public WebSecurityCustomizer webSecurityCustomizer() {
-      return (web) -> web.ignoring().antMatchers("/images/**", "/js/**");
-   }
 }

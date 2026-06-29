@@ -6,6 +6,7 @@ rootProject.name = 'hapi-fhirstarters-rest-server-skeleton-gradlelayersandspring
 * https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-creating-a-multi-project-build/
 * https://docs.gradle.org/current/samples/sample_building_java_applications_multi_project.html
 */
+include ':source:javalayers:hapifhirmimics'
 include ':source:javalayers:businesslogiclayer'
 include ':source:javalayers:resourceproviderlayer'
 include ':source:javalayers:toplayers:springboottoplayers:quickexampleserver'
