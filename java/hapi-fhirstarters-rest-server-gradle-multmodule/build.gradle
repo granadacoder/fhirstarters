@@ -1,29 +1,25 @@
 buildscript {
 
    ext {
-      spring_plugin_version = '3.5.16'
+      spring_plugin_version = '4.0.7'
       sonarqube_plugin_version = '7.3.1.8318'
       jacoco_tool_version = '0.8.6'
 
-      springBootVersion = '3.5.16'
-      // Note, there is a relationship between the spring-boot-version and the hapi-fhir-version as seen here (under 'Compile Dependencies'): https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-server/6.1.1
+      springBootVersion = '4.0.7'
+      // Note, there is a relationship between the spring-boot-version and the hapi-fhir-version as seen here (under 'Compile Dependencies'): https://mvnrepository.com/artifact/ca.uhn.hapi.fhir/hapi-fhir-server/8.8.1
       hapiFhirVersion = '8.8.1'
-
-      //below for granadacoder JT3 testing or any local SNAPSHOT testing
-      //hapiFhirVersion = '8.33.44-SNAPSHOT'
-
 
       jakartaServletApiVersion = '6.0.0'
 
 
       slf4jSimpleVersion = '2.0.17'
       slf4jVersion = "2.0.17"
-      javaxInjectVersion = "1"
+      jakartaInjectVersion = "2.0.1"
 
-      junitVersion = "4.13.2"
+      junitJupiterVersion = "6.1.0"
       mockitoVersion = "4.8.0"
 
-      commonsLangVersion = '3.14.0'
+      commonsLangVersion = '3.20.0'
 
       h2databaseVersion = '2.2.220'
 
@@ -38,7 +34,7 @@ buildscript {
 //    }
 
    dependencies {
-      classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.24.5')
+      classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '6+')
    }
 
 }
@@ -107,13 +103,6 @@ subprojects {
       //  However, it may be necessary when testing here with changes to a shared component library that have only
       //  been published locally (vi "gradle publishToMavenLocal".
       //
-
-
-      //below for granadacoder JT3 testing or any local SNAPSHOT testing
-      //mavenLocal()
-
-
-
       mavenCentral()
 
    }
@@ -187,7 +176,7 @@ allprojects {
 
    plugins.withType(JavaPlugin) {
       dependencies {
-         testImplementation group: 'junit', name: 'junit', version: junitVersion
+         testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: junitJupiterVersion
          testImplementation group: 'org.mockito', name: 'mockito-core', version: mockitoVersion
       }
    }
