@@ -1,8 +1,8 @@
 buildscript {
 
    ext {
-      spring_plugin_version = '4.0.7'
-      sonarqube_plugin_version = '7.3.1.8318'
+      spring_plugin_version = '3.2.0'
+      sonarqube_plugin_version = '3.0'
       jacoco_tool_version = '0.8.6'
 
       springBootVersion = '4.0.7'
@@ -69,8 +69,8 @@ tasks.withType(Test) {
 }
 
 
-sourceCompatibility = 21
-targetCompatibility = 21
+sourceCompatibility = 17
+targetCompatibility = 17
 
 
 subprojects {
@@ -132,8 +132,8 @@ subprojects {
    }
 
 
-   sourceCompatibility = 21
-   targetCompatibility = 21
+   sourceCompatibility = 17
+   targetCompatibility = 17
 }
 
 // repositories that apply to ONLY the root project.
